@@ -1,0 +1,45 @@
+.content{
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+
+
+.info{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    border:3px solid $header-outline;
+    border-radius: 25px;
+    margin: 0 auto;
+    .img-holder{
+        padding: 2em;
+        pointer-events: none;
+    }
+}
+
+.score-holder{
+    background-color: white;
+    width: 11rem;
+    color: $score-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5em;
+    border-radius: 12px;
+    margin: 0.5em;
+
+    h6{
+        font-size: 40%;
+        letter-spacing: 3px;
+    }
+
+    p{
+        color: $dark-text;
+        font-size: 1.8em;
+        font-weight: 700;
+
+    }
+}

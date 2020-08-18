@@ -1,0 +1,86 @@
+.game-start{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 3em auto;
+    height: 40em;
+    position: relative;
+    display: none;
+    h2{
+        margin: 2em 6em;
+    }
+}
+.result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1{
+        text-align: center;
+        font-size: 3.1em;
+        margin: 0 0 0.4em;
+    }
+
+    button{
+        background: white;
+        color: #dc2e4e;
+        outline: none;
+        border: none;
+        padding: 1.2em 3.4em;
+        border-radius: 10px;
+        font-size: 100%;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}
+
+
+.paper-game,.rock-game,.scissors-game{
+    position: absolute;
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 140%;
+}
+.paper-game{
+    background: linear-gradient($paper-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(86, 113, 245), 8%);
+}
+.rock-game{
+    background: linear-gradient($rock-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(221, 64, 93), 15%);
+}
+.scissors-game{
+    background: linear-gradient($scissors-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(236, 169, 34), 10%);
+}
+.you-pick{
+    top: 200px;
+    left: 60px;
+}
+.house-pick{
+    top: 200px;
+    right: 60px;
+}
+
+
+.paper-img-game,.rock-img-game,.scissors-img-game{
+    width: 10em;
+    box-shadow: inset 0px 9px 2px #d4dae4;
+    height: 10em;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    img{
+        width: 50%;
+    }
+}
