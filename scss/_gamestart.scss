@@ -14,7 +14,10 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+    
 
     h1{
         text-align: center;
@@ -62,10 +65,15 @@
 .you-pick{
     top: 200px;
     left: 60px;
+    opacity: 0;
+    transition: 1s ease-in-out;
 }
+
 .house-pick{
     top: 200px;
     right: 60px;
+    opacity: 0;
+    transition: 1s ease-in-out;
 }
 
 
@@ -79,8 +87,20 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    // animation: pulse-animation 1.5s infinite;
 
     img{
         width: 50%;
     }
 }
+
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(240, 233, 233, 0.055),0 0 0 20px rgba(240, 233, 233, 0.055),0 0 0 40px rgba(240, 233, 233, 0.055);
+      }
+  
+      100% {
+          box-shadow: 0 0 0 40px rgba(121, 118, 118, 0.055), 0 0 0 80px rgba(240, 233, 233, 0.055),0 0 0 160px rgba(240, 233, 233, 0.055);
+      }
+  }

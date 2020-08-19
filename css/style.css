@@ -68,7 +68,7 @@ img {
   margin: 3em auto;
   height: 40em;
   position: relative;
-  background-image: url(/images/bg-triangle.svg);
+  background-image: url(../images/bg-triangle.svg);
   background-repeat: no-repeat;
   background-position: 50%; }
 
@@ -175,7 +175,9 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: 0.6s ease-in-out; }
   .result h1 {
     text-align: center;
     font-size: 3.1em;
@@ -216,11 +218,15 @@ img {
 
 .you-pick {
   top: 200px;
-  left: 60px; }
+  left: 60px;
+  opacity: 0;
+  transition: 1s ease-in-out; }
 
 .house-pick {
   top: 200px;
-  right: 60px; }
+  right: 60px;
+  opacity: 0;
+  transition: 1s ease-in-out; }
 
 .paper-img-game, .rock-img-game, .scissors-img-game {
   width: 10em;
@@ -235,6 +241,11 @@ img {
   .paper-img-game img, .rock-img-game img, .scissors-img-game img {
     width: 50%; }
 
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(240, 233, 233, 0.055), 0 0 0 20px rgba(240, 233, 233, 0.055), 0 0 0 40px rgba(240, 233, 233, 0.055); }
+  100% {
+    box-shadow: 0 0 0 40px rgba(121, 118, 118, 0.055), 0 0 0 80px rgba(240, 233, 233, 0.055), 0 0 0 160px rgba(240, 233, 233, 0.055); } }
 .attribution {
   font-size: 11px;
   text-align: center;
