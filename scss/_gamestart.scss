@@ -6,9 +6,19 @@
     height: 40em;
     position: relative;
     display: none;
-    h2{
-        margin: 2em 6em;
-    }
+}
+
+.heading-you-pick{
+    transition: 1s ease-in-out;
+    position: absolute;
+    top: 70px;
+    left: 240px;
+}
+.heading-house-pick{
+    transition: 1s ease-in-out;
+    position: absolute;
+    top: 70px;
+    right: 240px;
 }
 .result{
     position: absolute;
@@ -25,7 +35,7 @@
         margin: 0 0 0.4em;
     }
 
-    button{
+    #play-again{
         background: white;
         color: #dc2e4e;
         outline: none;
@@ -64,14 +74,14 @@
 }
 .you-pick{
     top: 200px;
-    left: 60px;
+    left: 150px;
     opacity: 0;
     transition: 1s ease-in-out;
 }
 
 .house-pick{
     top: 200px;
-    right: 60px;
+    right: 150px;
     opacity: 0;
     transition: 1s ease-in-out;
 }
@@ -87,7 +97,6 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
-    // animation: pulse-animation 1.5s infinite;
 
     img{
         width: 50%;
@@ -103,4 +112,97 @@
       100% {
           box-shadow: 0 0 0 40px rgba(121, 118, 118, 0.055), 0 0 0 80px rgba(240, 233, 233, 0.055),0 0 0 160px rgba(240, 233, 233, 0.055);
       }
+  }
+
+
+  @keyframes pulse-text {
+
+
+    0% {
+        box-shadow: 0 0 0 0px rgba(#dc2e4e, 1);
+
+
+      }
+    100%{
+        box-shadow: 0 0 0 20px rgba(#dc2e4e, 0);
+
+
+      }
+    
+    
+  }
+
+
+
+  @media (max-width: 1380px){
+    .game-start{
+        width: 80%;
+    }
+  }
+  @media (max-width: 1200px){
+    .game-start{
+        width: 95%;
+    }
+  }
+  @media (max-width: 970px){
+      .you-pick{
+          left: 130px;
+      }
+      .house-pick{
+          right: 130px;
+      }
+    .heading-you-pick{
+        left: 150px;
+    }
+    .heading-house-pick{
+        right: 150px;
+    }
+    .game-start{
+        width: 85%;
+    }
+    .result{
+        top: 43%;
+        h1{
+            font-size: 2.1em;
+        }
+        #play-again{
+
+            padding: 1em 1.3em;
+
+        }
+    }
+    .paper-game,.rock-game,.scissors-game{
+        width: 8em;
+        height: 8em;
+    }
+    .paper-img-game,.rock-img-game,.scissors-img-game{
+        width: 6.5em;
+        height: 6.5em;
+    }
+  }
+  @media (max-width: 800px){
+      .you-pick,.house-pick{
+        transform: translateX(0px);
+      }
+    .paper-game,.rock-game,.scissors-game{
+        width: 7em;
+        height: 7em;
+    }
+    .paper-img-game,.rock-img-game,.scissors-img-game{
+        width: 5em;
+        height: 5em;
+    }
+    .result{
+        top: 80%;
+        h1{
+            font-size: 3.1em;
+        }
+        #play-again{
+
+            padding: 1.2em 3.4em;
+
+        }
+    }
+    
+        
   }
