@@ -6,8 +6,12 @@ function showRules(){
     let showRules = document.querySelector(".show-rules");
     let cancel = document.querySelector(".cancel");
     let main = document.querySelector("#main");
+    let content = document.querySelector(".content");
 
     ruleBtn.addEventListener("click",() =>{
+        if(window.innerWidth < 600){
+            content.style=`display:none`;
+        }
         showRules.style=`display:flex`;
         main.style=`opacity:0.5;background:black;`;
     });
@@ -15,6 +19,7 @@ function showRules(){
     cancel.addEventListener("click",() =>{
         showRules.style =`display:none`;
         main.style=`opacity:1;background:none;`;
+        content.style=`display:block`;
     });
 
 }
@@ -40,6 +45,9 @@ game.addEventListener("click",function(e){
 
         let youPick = document.querySelector(".you-pick");
         let housePick = document.querySelector(".house-pick");
+        let result = document.querySelector(".result");
+        let headingYouPick = document.querySelector(".heading-you-pick");
+        let headingHousePick = document.querySelector(".heading-house-pick");
     function showYouPick(){
         youPick.style =`opacity:1; transform: rotate(360deg);`
     }
@@ -47,18 +55,17 @@ game.addEventListener("click",function(e){
         housePick.style =`opacity:1; transform: rotate(-360deg);`
     }
     function showWhoWon(){
-        let result = document.querySelector(".result");
-        let headingYouPick = document.querySelector(".heading-you-pick");
-        let headingHousePick = document.querySelector(".heading-house-pick");
         housePick.style =`opacity:1; transform: translateX(150px);`;
         youPick.style =`opacity:1; transform: translateX(-150px);`;
         result.style =`opacity:1;transform: translate(-50%, -50%) scale(1)`;
         headingYouPick.style =`transform: translateX(-150px);`;
         headingHousePick.style =`transform: translateX(150px);`;
         if(window.innerWidth < 800){
-            headingYouPick.style =`transform: translateX(0px);`;
-            headingHousePick.style =`transform: translateX(0px);`;
-            youPick.style =` opacity:1;transform: translateX(0xp);`;
+            youPick.style.removeProperty('transform');
+            housePick.style.removeProperty('transform');
+            headingYouPick.style.removeProperty('transform');
+            headingHousePick.style.removeProperty('transform');
+            youPick.style =` opacity:1;transform:  translateX(0px);`;
             housePick.style =`opacity:1;transform: translateX(0px);`;
 
         }
@@ -78,34 +85,34 @@ game.addEventListener("click",function(e){
     };
     setTimeout(playAgain,3000);
     
-    function compareWho(a,b,c){
+    function compareWho(classClicked,winner,loser){
         let whoWins = "";
-        if(e.target.classList.contains(`${a}`)){
+        if(e.target.classList.contains(`${classClicked}`)){
     
             setTimeout(showYouPick,0);
             setTimeout(showHousePick,1000);
             setTimeout(showWhoWon,2000);
     
     
-            if(randomClass[addRandom]===`${b}`){
+            if(randomClass[addRandom]===`${winner}`){
                 whoWins="YOU WIN";
                 function addWinAnimation(){
                     youPick.style =`opacity:1;transform: translateX(-150px);animation: pulse-animation 1.5s infinite;`;
                     increaseScore++;
                     showScore.innerHTML = increaseScore;
                     if(window.innerWidth < 800){
-                        youPick.style =` transform: translateX(0xp);opacity:1;animation:pulse-animation 1.5s infinite;`;
+                        youPick.style.removeProperty('transform');
                     }
                 }
                 setTimeout(addWinAnimation,3000);
-            }else if(randomClass[addRandom]===`${c}`){
+            }else if(randomClass[addRandom]===`${loser}`){
                 whoWins="YOU LOSE";
                 function addLoseAnimation(){
                     housePick.style =`opacity:1;transform: translateX(150px);animation: pulse-animation 1.5s infinite;`;
                     increaseScore--;
                     showScore.innerHTML = increaseScore;
                     if(window.innerWidth < 800){
-                        housePick.style =` transform: translateX(0xp);opacity:1;animation:pulse-animation 1.5s infinite;`;
+                        housePick.style.removeProperty('transform');
                     }
                 }
                 setTimeout(addLoseAnimation,3000);
@@ -119,9 +126,9 @@ game.addEventListener("click",function(e){
                     <h1>${whoWins}</h1>
                     <button id="play-again">PLAY AGAIN</button>
                 </div>
-                <div class="${a}-game you-pick">
-                    <div class="${a}-img-game">
-                        <img src="./images/icon-${a}.svg" alt="${a}-icon">
+                <div class="${classClicked}-game you-pick">
+                    <div class="${classClicked}-img-game">
+                        <img src="./images/icon-${classClicked}.svg" alt="${classClicked}-icon">
                     </div>              
                 </div>
                 <div class="${randomClass[addRandom]}-game house-pick">
