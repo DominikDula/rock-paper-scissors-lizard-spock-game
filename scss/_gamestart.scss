@@ -2,7 +2,7 @@
     display: flex;
     width: 70%;
     justify-content: space-between;
-    margin: 3em auto;
+    margin: 0 auto;
     height: 40em;
     position: relative;
     display: none;
@@ -33,6 +33,7 @@
         text-align: center;
         font-size: 3.1em;
         margin: 0 0 0.4em;
+        white-space: nowrap;
     }
 
     #play-again{
@@ -181,9 +182,28 @@
     }
   }
   @media (max-width: 800px){
-      .you-pick,.house-pick{
-        transform: translateX(0px);
+      .game-start{
+          margin: 0 auto;
       }
+
+      .you-pick{
+        left: 60px;
+        top: 100px;
+        
+      }
+      .house-pick{
+        right: 60px;
+        top: 100px;  
+      }
+      .heading-you-pick{
+        left: 80px;
+        top: 300px;
+    }
+    .heading-house-pick{
+        right: 40px;
+        top: 300px;
+    }
+      
     .paper-game,.rock-game,.scissors-game{
         width: 7em;
         height: 7em;
@@ -203,6 +223,117 @@
 
         }
     }
+
+    @keyframes pulse-animation {
+        0% {
+            box-shadow: 0 0 0 0px rgba(240, 233, 233, 0.055),0 0 0 10px rgba(240, 233, 233, 0.055),0 0 0 20px rgba(240, 233, 233, 0.055);
+          }
+      
+          100% {
+              box-shadow: 0 0 0 20px rgba(121, 118, 118, 0.055), 0 0 0 40px rgba(240, 233, 233, 0.055),0 0 0 80px rgba(240, 233, 233, 0.055);
+          }
+      }
     
         
   }
+
+
+  @media (max-width: 600px) { 
+    .result{
+        top: 70%;
+      }
+
+    .heading-you-pick{
+        left: 60px;
+        font-size: 1.2em;
+    }
+    .heading-house-pick{
+        right: 35px;
+        font-size: 1.2em;
+    }
+    .paper-game,.rock-game,.scissors-game{
+        width: 5em;
+        height: 5em;
+    }
+    .paper-img-game,.rock-img-game,.scissors-img-game{
+        width: 3.5em;
+        height: 3.5em;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 500px) { 
+    .you-pick{
+        left: 30px;
+    }
+    .house-pick{
+        right: 30px;
+    }
+
+    .heading-you-pick{
+        left: 40px;
+    }
+    .heading-house-pick{
+        right: 20px;
+    }
+ 
+
+}
+
+
+@media (max-width: 380px) { 
+
+    .paper-game,.rock-game,.scissors-game{
+        width: 4em;
+        height: 4em;
+    }
+    .paper-img-game,.rock-img-game,.scissors-img-game{
+        width: 2.8em;
+        height: 2.8em;
+    }
+    .you-pick{
+        top: 100px;
+    }
+    .house-pick{
+        top: 100px;
+    }
+
+    .heading-you-pick{
+        font-size: 0.9em;
+        top: 230px;
+    }
+    .heading-house-pick{
+        font-size: 0.9em;
+        top: 230px;
+    }
+
+    .result{
+        top: 60%;
+        #play-again{
+            padding: 0.8em 4.2em;
+        }
+    }
+ 
+
+}
+
+@media (max-width: 350px){
+    .you-pick{
+        left: 0;
+    }
+    .house-pick{
+        right: 0;
+    }
+
+    .heading-you-pick{
+        left: 10px;
+    }
+    .heading-house-pick{
+        right: 0px;
+    }
+
+}

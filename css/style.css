@@ -4,7 +4,7 @@ html {
 
 #main {
   width: 100%;
-  height: 100vh; }
+  min-height: 100vh; }
 
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
@@ -29,7 +29,7 @@ img {
 .content {
   max-width: 1366px;
   margin: 0 auto;
-  padding: 2em 0;
+  padding: 3em 0;
   position: relative; }
 
 .info {
@@ -63,6 +63,9 @@ img {
     font-weight: 700; }
 
 @media (max-width: 600px) {
+  .info {
+    width: 85%; }
+
   .score-holder {
     font-size: 1.8em; } }
 @media (max-width: 350px) {
@@ -72,7 +75,7 @@ img {
   display: flex;
   width: 70%;
   justify-content: space-between;
-  margin: 3em auto;
+  margin: 0 auto;
   height: 40em;
   position: relative; }
 
@@ -128,9 +131,8 @@ img {
     width: 50%; }
 
 .rules {
-  position: absolute;
-  bottom: 0;
-  right: 0; }
+  display: flex;
+  justify-content: flex-end; }
   .rules .rule-btn {
     border: 3px solid #606e85;
     border-radius: 12px;
@@ -184,7 +186,14 @@ img {
   100% {
     transform: rotate(0deg);
     box-shadow: 0 0 0 10px rgba(121, 118, 118, 0.055), 0 0 0 20px rgba(240, 233, 233, 0.055), 0 0 0 40px rgba(240, 233, 233, 0.055); } }
-@media (max-width: 790px) {
+@media (max-width: 800px) {
+  .game {
+    margin: 0 auto; }
+
+  .rules {
+    justify-content: center;
+    margin: 0; }
+
   .game-wrapper {
     width: 390px; }
 
@@ -199,6 +208,19 @@ img {
     width: 7em;
     height: 7em; } }
 @media (max-width: 600px) {
+  .show-rules {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0; }
+    .show-rules .rule-wrap h1 {
+      margin: 90px auto 0; }
+    .show-rules .rule-wrap button {
+      margin: 0;
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, 50%); }
+
   .game-wrapper {
     width: 300px;
     background-position: 50% 44%;
@@ -212,6 +234,9 @@ img {
     width: 5em;
     height: 5em; } }
 @media (max-width: 400px) {
+  .show-rules .rule-wrap h1 {
+    margin: 20px auto 0; }
+
   .game-wrapper {
     background-position: 50% 42%;
     background-size: 75%; }
@@ -227,7 +252,7 @@ img {
   display: flex;
   width: 70%;
   justify-content: space-between;
-  margin: 3em auto;
+  margin: 0 auto;
   height: 40em;
   position: relative;
   display: none; }
@@ -254,7 +279,8 @@ img {
   .result h1 {
     text-align: center;
     font-size: 3.1em;
-    margin: 0 0 0.4em; }
+    margin: 0 0 0.4em;
+    white-space: nowrap; }
   .result #play-again {
     background: white;
     color: #dc2e4e;
@@ -361,8 +387,24 @@ img {
     width: 6.5em;
     height: 6.5em; } }
 @media (max-width: 800px) {
-  .you-pick, .house-pick {
-    transform: translateX(0px); }
+  .game-start {
+    margin: 0 auto; }
+
+  .you-pick {
+    left: 60px;
+    top: 100px; }
+
+  .house-pick {
+    right: 60px;
+    top: 100px; }
+
+  .heading-you-pick {
+    left: 80px;
+    top: 300px; }
+
+  .heading-house-pick {
+    right: 40px;
+    top: 300px; }
 
   .paper-game, .rock-game, .scissors-game {
     width: 7em;
@@ -377,7 +419,83 @@ img {
     .result h1 {
       font-size: 3.1em; }
     .result #play-again {
-      padding: 1.2em 3.4em; } }
+      padding: 1.2em 3.4em; }
+
+  @keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(240, 233, 233, 0.055), 0 0 0 10px rgba(240, 233, 233, 0.055), 0 0 0 20px rgba(240, 233, 233, 0.055); }
+    100% {
+      box-shadow: 0 0 0 20px rgba(121, 118, 118, 0.055), 0 0 0 40px rgba(240, 233, 233, 0.055), 0 0 0 80px rgba(240, 233, 233, 0.055); } } }
+@media (max-width: 600px) {
+  .result {
+    top: 70%; }
+
+  .heading-you-pick {
+    left: 60px;
+    font-size: 1.2em; }
+
+  .heading-house-pick {
+    right: 35px;
+    font-size: 1.2em; }
+
+  .paper-game, .rock-game, .scissors-game {
+    width: 5em;
+    height: 5em; }
+
+  .paper-img-game, .rock-img-game, .scissors-img-game {
+    width: 3.5em;
+    height: 3.5em; } }
+@media (max-width: 500px) {
+  .you-pick {
+    left: 30px; }
+
+  .house-pick {
+    right: 30px; }
+
+  .heading-you-pick {
+    left: 40px; }
+
+  .heading-house-pick {
+    right: 20px; } }
+@media (max-width: 380px) {
+  .paper-game, .rock-game, .scissors-game {
+    width: 4em;
+    height: 4em; }
+
+  .paper-img-game, .rock-img-game, .scissors-img-game {
+    width: 2.8em;
+    height: 2.8em; }
+
+  .you-pick {
+    top: 100px; }
+
+  .house-pick {
+    top: 100px; }
+
+  .heading-you-pick {
+    font-size: 0.9em;
+    top: 230px; }
+
+  .heading-house-pick {
+    font-size: 0.9em;
+    top: 230px; }
+
+  .result {
+    top: 60%; }
+    .result #play-again {
+      padding: 0.8em 4.2em; } }
+@media (max-width: 350px) {
+  .you-pick {
+    left: 0; }
+
+  .house-pick {
+    right: 0; }
+
+  .heading-you-pick {
+    left: 10px; }
+
+  .heading-house-pick {
+    right: 0px; } }
 .attribution {
   font-size: 11px;
   text-align: center;

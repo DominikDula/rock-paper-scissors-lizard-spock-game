@@ -1,7 +1,7 @@
 .content{
     max-width: 1366px;
     margin: 0 auto;
-    padding: 2em 0;
+    padding: 3em 0;
     position: relative;
 }
 
@@ -47,8 +47,12 @@
 
 
 @media (max-width: 600px){
+    .info{
+        width: 85%;
+    }
     .score-holder{
         font-size: 1.8em;
+
     }
 }
 
