@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="advanced-game">
+        <div class="hard-game">
             <div class="game-wrapper">
                 <div class="paper">
                     <div class="paper-img">
@@ -76,19 +76,19 @@
 
 
         <div class="game-start">
-            <h2 class="heading-you-pick">YOU PICKED</h2>
-            <h2 class="heading-house-pick">THE HOUSE PICKED</h2>
+            <h2 id="you-heading" class="heading-you-pick">YOU PICKED</h2>
+            <h2 id="house-heading" class="heading-house-pick">THE HOUSE PICKED</h2>
             
-            <div class="result">
+            <div id="result" class="result">
                 <h1>YOU LOSE</h1>
                 <button id="play-again">PLAY AGAIN</button>
             </div>
-            <div class="paper-game you-pick">
+            <div id="you-select" class="paper-game you-pick">
                 <div class="paper-img-game">
                     <img src="./images/icon-paper.svg" alt="paper-icon">
                 </div>              
             </div>
-            <div class="rock-game house-pick">
+            <div id="house-select" class="rock-game house-pick">
                 <div class="rock-img-game">
                     <img src="./images/icon-rock.svg" alt="rock-icon">
                 </div>   
@@ -97,7 +97,10 @@
         </div>
         <div class="rules">
             <button class="rule-btn">RULES</button>
+            <button class="hard-btn">HARD</button>
         </div>
+        
+        
         
 
 
@@ -116,11 +119,6 @@
     </div>
 </div>
 
-    
-
-</div>
-
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

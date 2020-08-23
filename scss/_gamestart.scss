@@ -49,8 +49,13 @@
     }
 }
 
+.show-result{
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
+}
 
-.paper-game,.rock-game,.scissors-game{
+
+.paper-game,.rock-game,.scissors-game,.spock-game,.lizard-game{
     position: absolute;
     width: 13em;
     height: 13em;
@@ -58,8 +63,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     font-size: 140%;
+    top: 200px;
+    opacity: 0;
+    transition: 1s ease-in-out;
 }
 .paper-game{
     background: linear-gradient($paper-gradient);
@@ -73,22 +80,41 @@
     background: linear-gradient($scissors-gradient);
     box-shadow: inset 0px -9px 2px darken(rgb(236, 169, 34), 10%);
 }
+.spock-game{
+    background: linear-gradient($cyan);
+    box-shadow: inset 0px -9px 2px darken(rgb(82, 190, 209), 10%);
+}
+.lizard-game{
+    background: linear-gradient($lizard-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(140, 93, 229), 10%);
+}
 .you-pick{
-    top: 200px;
     left: 150px;
-    opacity: 0;
-    transition: 1s ease-in-out;
 }
 
 .house-pick{
-    top: 200px;
     right: 150px;
-    opacity: 0;
-    transition: 1s ease-in-out;
+}
+
+.you-rotate{
+    opacity:1; 
+    transform: rotate(360deg);
+}
+.you-transform{
+    opacity:1; 
+    transform: translateX(-150px);
+}
+.house-rotate{
+    opacity:1; 
+    transform: rotate(-360deg);
+}
+.house-transform{
+    opacity:1; 
+    transform: translateX(150px);
 }
 
 
-.paper-img-game,.rock-img-game,.scissors-img-game{
+.paper-img-game,.rock-img-game,.scissors-img-game,.spock-img-game,.lizard-img-game{
     width: 10em;
     box-shadow: inset 0px 9px 2px #d4dae4;
     height: 10em;
@@ -172,11 +198,11 @@
 
         }
     }
-    .paper-game,.rock-game,.scissors-game{
+    .paper-game,.rock-game,.scissors-game,.spock-game,.lizard-game{
         width: 8em;
         height: 8em;
     }
-    .paper-img-game,.rock-img-game,.scissors-img-game{
+    .paper-img-game,.rock-img-game,.scissors-img-game,.spock-img-game,.lizard-img-game{
         width: 6.5em;
         height: 6.5em;
     }
@@ -204,13 +230,13 @@
         top: 300px;
     }
       
-    .paper-game,.rock-game,.scissors-game{
+    .paper-game,.rock-game,.scissors-game,.spock-game,.lizard-game{
         width: 7em;
         height: 7em;
     }
-    .paper-img-game,.rock-img-game,.scissors-img-game{
-        width: 5em;
-        height: 5em;
+    .paper-img-game,.rock-img-game,.scissors-img-game,.spock-img-game,.lizard-img-game{
+        width: 5.5em;
+        height: 5.5em;
     }
     .result{
         top: 80%;
@@ -251,13 +277,13 @@
         right: 35px;
         font-size: 1.2em;
     }
-    .paper-game,.rock-game,.scissors-game{
+    .paper-game,.rock-game,.scissors-game,.spock-game,.lizard-game{
         width: 5em;
         height: 5em;
     }
-    .paper-img-game,.rock-img-game,.scissors-img-game{
-        width: 3.5em;
-        height: 3.5em;
+    .paper-img-game,.rock-img-game,.scissors-img-game,.spock-img-game,.lizard-img-game{
+        width: 4em;
+        height: 4em;
     }
 
 }
@@ -287,13 +313,13 @@
 
 @media (max-width: 380px) { 
 
-    .paper-game,.rock-game,.scissors-game{
+    .paper-game,.rock-game,.scissors-game,.spock-game,.lizard-game{
         width: 4em;
         height: 4em;
     }
-    .paper-img-game,.rock-img-game,.scissors-img-game{
-        width: 2.8em;
-        height: 2.8em;
+    .paper-img-game,.rock-img-game,.scissors-img-game,.spock-img-game,.lizard-img-game{
+        width: 3em;
+        height: 3em;
     }
     .you-pick{
         top: 100px;

@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.game-toggle{
+    display: none;
+}
+
 .game-wrapper{
     width: 500px;
     margin: 0 auto;
@@ -76,7 +80,7 @@
     display: flex;
     justify-content: flex-end;
 
-    .rule-btn{
+    .rule-btn,.hard-btn{
         border: 3px solid #606e85;
         border-radius: 12px;
         outline: none;
@@ -86,6 +90,13 @@
         font-size: 100%;
         letter-spacing: 3px;
         cursor: pointer;
+        margin: 0 1em;
+        }
+        button:disabled{
+            color: red;
+            border: 3px solid red;
+            background: #8080804d;
+            cursor: auto;
 }
 }
 
@@ -126,8 +137,10 @@
     }
 
     .rule-img{
-        margin-top: 4em;
+        margin-top: 2em;
         pointer-events: none;
+        max-width: 300px;
+        max-height: 300px;
     }
 
     
@@ -153,13 +166,10 @@
 
   @media (max-width: 800px) { 
       .game{
-          margin: 0 auto;
+          margin: -5em auto 0;
       }
 
-    .rules{
-        justify-content: center;
-        margin: 0;
-    }
+  
     .game-wrapper{
         width: 390px;
     }
@@ -179,6 +189,16 @@
 
 }
 @media (max-width: 600px) { 
+    .rules{
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .rule-btn,.hard-btn{   
+            padding: 0.5em 1em;
+
+        }
+    }
 
     .show-rules{
         width: 100%;
@@ -211,8 +231,8 @@
     }
 
     .paper-img,.rock-img,.scissors-img{
-        width: 5em;
-        height: 5em;
+        width: 5.5em;
+        height: 5.5em;
     }
 
 }
@@ -229,11 +249,6 @@
         }
     }
     
-    .game-wrapper{
-        background-position: 50% 42%;
-        background-size: 75%;
-    }
-
     .paper,.rock,.scissors{
         width: 5em;
         height: 5em;

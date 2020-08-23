@@ -15,8 +15,9 @@
     border-radius: 25px;
     margin: 0 auto;
     .img-holder{
-        padding: 2em;
+        padding:1em 2em;
         pointer-events: none;
+        display: flex;
     }
 }
 
@@ -33,7 +34,6 @@
     margin: 0.5em;
 
     h6{
-        font-size: 40%;
         letter-spacing: 3px;
     }
 
@@ -52,6 +52,7 @@
     }
     .score-holder{
         font-size: 1.8em;
+        width: 7rem;
 
     }
 }

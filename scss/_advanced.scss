@@ -1,30 +1,70 @@
-.advanced-game{
-    display: flex;
+.hard-game{
+    // display: flex;
     width: 70%;
     justify-content: space-between;
     margin: 0 auto;
     height: 40em;
+    display: none;
+
+
+.game-wrapper{
+    width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-rows: 1.5fr 1.5fr 1.5fr;
+    background-image: url(../images/bg-pentagon.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    grid-template-areas: "scissors scissors" "spock paper" "lizard rock";
     position: relative;
+
+    .spock,.lizard,.rock,.paper,.scissors{
+        position: absolute;
+    }
+
+
+    .spock{
+        grid-area: spock;
+        align-self: center;
+        background: linear-gradient($cyan);
+        box-shadow: inset 0px -9px 2px darken(rgb(82, 190, 209), 8%);
+        right: 37%;
+        bottom: 27%;
+
+    }
+    .lizard{
+        grid-area: lizard;
+        align-self: center;
+        background: linear-gradient($lizard-gradient);
+        box-shadow: inset 0px -9px 2px darken(rgb(140, 93, 229), 8%);
+        top: -4%;
+        left: 26%;
+
+    }
+    .paper{
+        grid-area: paper;
+        left: 37%;
+        bottom: 27%;
+    }
+    .rock{
+        grid-area: rock;
+        top: -4%;
+        right: 26%;
+    }
+    .scissors{
+        grid-area: scissors;
+        bottom: -10%;
+        left: 35%;
+        
+    }
+ 
+
 }
 
-.spock{
-    grid-area: paper;
-    align-self: center;
-    background: linear-gradient($cyan-gradient);
-    box-shadow: inset 0px -9px 2px darken(rgb(86, 113, 245), 8%);
-
-}
-.lizard{
-    grid-area: paper;
-    align-self: center;
-    background: linear-gradient($lizard-gradient);
-    box-shadow: inset 0px -9px 2px darken(rgb(86, 113, 245), 8%);
-
-}
-
-.spock,.lizard{
-    width: 13em;
-    height: 13em;
+.spock,.lizard,.paper,.rock,.scissors{
+    width: 9em;
+    height: 9em;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -37,10 +77,10 @@
 
 
 
-.spock-img,.lizard-img{
-    width: 10em;
+.spock-img,.lizard-img,.paper-img,.rock-img,.scissors-img{
+    width: 7em;
+    height: 7em;
     box-shadow: inset 0px 9px 2px #d4dae4;
-    height: 10em;
     border-radius: 50%;
     background: white;
     display: flex;
@@ -50,5 +90,195 @@
 
     img{
         width: 50%;
+    }
+}
+
+}
+
+.hard-game-toggle{
+    display: flex;
+}
+
+@media (max-width: 750px){
+    .hard-game{
+        margin-top: -5em;
+
+        .game-wrapper{
+            width: 350px;
+            .spock{
+                right: 38%;
+                bottom: 36%;
+        
+            }
+            .lizard{
+                left: 14%;
+        
+            }
+            .paper{
+                left: 38%;
+                bottom: 36%;
+            }
+            .rock{
+                right: 14%;
+            }
+
+        }
+        
+
+        .spock,.lizard,.paper,.rock,.scissors{
+            width: 7em;
+            height: 7em; 
+        }
+        .spock-img,.lizard-img,.paper-img,.rock-img,.scissors-img{
+            width: 5em;
+            height: 5em;
+        }
+    }
+}
+
+@media (max-width: 600px){
+
+    .hard-game{
+
+        .game-wrapper{
+
+            .lizard{
+                top: -21%;
+                left: 23%; 
+            }
+
+            .rock{
+                top: -21%;
+                right: 23%;
+            }
+            .scissors{
+                bottom: -16%;
+
+            }
+
+        }
+
+    }
+
+}
+
+@media (max-width: 500px){
+
+    .hard-game{
+
+        .game-wrapper{
+            .spock{
+                right: 36%;
+        
+            }
+            .lizard{
+                top: -28%;
+                left: 35%;
+        
+            }
+            .paper{
+                left: 36%;
+                
+            }
+            .rock{
+                top: -28%;
+                right: 35%;
+            }
+            .scissors{
+                bottom: -19%;
+                
+            }
+        }
+        
+
+        .spock,.lizard,.paper,.rock,.scissors{
+            width: 6em;
+            height: 6em; 
+        }
+        .spock-img,.lizard-img,.paper-img,.rock-img,.scissors-img{
+            width: 4.5em;
+            height: 4.5em;
+        }
+    }
+
+}
+@media (max-width: 460px){
+
+    .hard-game{
+
+        .game-wrapper{
+
+            .lizard{
+                left: 25%;
+        
+            }
+
+            .rock{
+                right: 25%;
+            }
+
+        }
+        
+    }
+
+}
+
+@media (max-width: 400px){
+
+    .hard-game{
+
+        .game-wrapper{
+            .spock{
+                bottom: 45%;
+                right: 36%;
+            }
+            .lizard{
+                top: -28%;
+                left: 40%;
+        
+            }
+            .paper{
+                bottom: 45%;
+                left: 36%;
+            }
+            .rock{
+                top: -28%;
+                right: 40%;
+            }
+            .scissors{
+                bottom: -28%;
+                
+            }
+    
+        }
+        
+
+        .spock,.lizard,.paper,.rock,.scissors{
+            width: 4em;
+            height: 4em; 
+        }
+        .spock-img,.lizard-img,.paper-img,.rock-img,.scissors-img{
+            width: 3em;
+            height: 3em;
+        }
+    }
+
+}
+
+@media (max-width: 330px){
+    .hard-game{
+        .game-wrapper{
+
+            .lizard{
+                top: -34%;
+                left: 26%;
+            }
+            .rock{
+                top: -34%;
+                right: 26%;
+            }
+
+
+        }
     }
 }
