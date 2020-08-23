@@ -1,0 +1,54 @@
+.advanced-game{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 40em;
+    position: relative;
+}
+
+.spock{
+    grid-area: paper;
+    align-self: center;
+    background: linear-gradient($cyan-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(86, 113, 245), 8%);
+
+}
+.lizard{
+    grid-area: paper;
+    align-self: center;
+    background: linear-gradient($lizard-gradient);
+    box-shadow: inset 0px -9px 2px darken(rgb(86, 113, 245), 8%);
+
+}
+
+.spock,.lizard{
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+        animation: hover 1.5s ease-in-out infinite;
+    }
+}
+
+
+
+.spock-img,.lizard-img{
+    width: 10em;
+    box-shadow: inset 0px 9px 2px #d4dae4;
+    height: 10em;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    img{
+        width: 50%;
+    }
+}
